@@ -66,7 +66,7 @@ spec:
        stage('helm') {
            steps {
                sh 'helm version'
-               sh 'helm upgrade --install nikhil1 test-app'
+               sh 'helm upgrade --install nikhil test-app'
            }
        }
      }
