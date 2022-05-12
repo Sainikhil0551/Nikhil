@@ -56,6 +56,14 @@ spec:
             sh 'docker push sainikhil1999/nikhil'
            }
     }
+       stage('deploy') {
+           steps {
+             sh '''
+                kubectl apply -f Deployment.yml
+                kubectl apply -f service.yml
+                '''
+           }
+       }
      stage("install helm"){
        steps {
          sh 'curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3'
